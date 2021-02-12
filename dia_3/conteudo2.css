@@ -1,6 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+h1{
+    text-align: center;
+}
+
 .super-mario{
     width: 300px;
     position: absolute;
