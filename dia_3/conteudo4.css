@@ -38,8 +38,7 @@ ul:nth-of-type(1) li:nth-child(-n+3){
     color: blue;
 }
 
-ul:nth-of-type(1) li:nth-child(-n+3) {
-    content: "Java";
+.java {
     background-color: pink;
 }
 
