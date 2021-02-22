@@ -1,0 +1,50 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1{
+    text-align: center;
+}
+
+.super-mario{
+    width: 15%;
+    position: absolute;
+    top: 10%;
+    z-index: 2;
+    left: 20%
+    
+}
+
+.goomba{
+    width: 15%;
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    z-index: 1;
+}
+
+.bowser{
+    width: 15%;
+    position: absolute;
+    top: 60%;
+    right: 20%;
+    z-index: 3;
+}
+
+
+.baloon{
+    width: 15%;
+    position: absolute;
+    top: 58%;
+    right: 38%;
+    z-index: 4;
+}
+
+.baloon-phrase{
+    position: absolute;
+    top: 62%;
+    right: 35%;
+    text-align: auto;
+    z-index: 5;
+    font-family: 'Press Start 2P';
+    width: 15%;
+}
