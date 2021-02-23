@@ -1,0 +1,29 @@
+img{
+    width: 500px;
+}
+
+nav{
+    background-color: cyan;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a{
+    background-color: burlywood;
+    border: cadetblue 1px solid;
+    padding: 5px;
+}
+
+aside{
+    position: fixed;
+    top: 7%;
+    right: 2%;
+}
+
+p, h2, h1, h3{
+    width: 50%
+}
+
+h1, h2, h3{
+    text-align: center;
+}
