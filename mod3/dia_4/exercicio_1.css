@@ -27,3 +27,24 @@ p, h2, h1, h3{
 h1, h2, h3{
     text-align: center;
 }
+
+p{
+    text-align: justify;
+}
+
+body{
+    background-color: #55BBFF;
+}
+
+h1{
+    color: purple;
+}
+
+h2{
+    color: #04fc80;
+}
+
+footer{
+    margin-top: 5%;
+    border-top: black solid 1px;
+}
