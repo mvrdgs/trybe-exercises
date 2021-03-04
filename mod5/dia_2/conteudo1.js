@@ -21,3 +21,15 @@ whereYouAre.nextElementSibling;
 
 // Agora acesse o terceiroFilho a partir de pai .
 whereYouAre.parentNode.lastElementChild.previousElementSibling;
+
+// Crie um irmão para elementoOndeVoceEsta .
+whereYouAre.parentNode.appendChild(document.createElement('div'));
+
+// Crie um filho para elementoOndeVoceEsta .
+whereYouAre.appendChild(document.createElement('div'));
+
+// Crie um filho para primeiroFilhoDoFilho .
+whereYouAre.firstElementChild.appendChild(document.createElement('div'));
+
+// A partir desse filho criado, acesse terceiroFilho .
+whereYouAre.firstElementChild.firstElementChild.parentNode.parentNode.nextElementSibling
