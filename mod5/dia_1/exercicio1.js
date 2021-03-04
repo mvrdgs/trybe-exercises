@@ -1,14 +1,26 @@
 let paragraph = document.getElementsByTagName("p");
-paragraph[1].innerText = "Me vejo trabalhando com desenvolvimento Java e ganhando um bom salário";
+
+function changeText(parameter, text) {
+  parameter.innerText = text;
+}
+
+changeText(paragraph[1], 'Me vejo trabalhando com desenvolvimento Java e ganhando um bom salário');
+
+function changeBgColor(parameter, color) {
+  parameter.style.backgroundColor = color;
+}
 
 let mainContent = document.getElementsByClassName("main-content");
-mainContent[0].style.backgroundColor = 'rgb(76,164,109)'
+
+changeBgColor(mainContent[0], 'rgb(76,164,109)');
 
 let centerContent = document.getElementsByClassName('center-content');
-centerContent[0].style.backgroundColor = 'white';
+
+changeBgColor(centerContent[0], 'white');
 
 let title = document.getElementsByClassName('title');
-title[0].textContent = 'Exercício 5.1 - JavaScript';
+
+changeText(title[0], 'Exercício 5.1 - JavaScript')
 
 function upperCase(parameter) {
   for (let index = 0; index < parameter.length; index += 1) {
@@ -19,4 +31,10 @@ function upperCase(parameter) {
 
 upperCase(paragraph);
 
-console.log(paragraph);
+function htmlPrint(parameter) {
+  for (let index = 0; index < parameter.length; index += 1) {
+    console.log(parameter[index].innerHTML);
+  }
+}
+
+htmlPrint(paragraph);
