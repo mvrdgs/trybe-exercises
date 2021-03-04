@@ -33,3 +33,28 @@ whereYouAre.firstElementChild.appendChild(document.createElement('div'));
 
 // A partir desse filho criado, acesse terceiroFilho .
 whereYouAre.firstElementChild.firstElementChild.parentNode.parentNode.nextElementSibling
+
+whereYouAre.lastElementChild.id = 'novo-filho';
+whereYouAre.firstElementChild.lastElementChild.id = 'novo-filho-do-filho';
+
+//Remova todos os elementos da página, menos pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+let novoFilho = document.getElementById('novo-filho');
+novoFilho.parentNode.removeChild(novoFilho);
+
+let novoFilhoDoFilho = document.getElementById('novo-filho-do-filho');
+novoFilhoDoFilho.parentNode.removeChild(novoFilhoDoFilho);
+
+let segundoFilhoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+segundoFilhoEUltimoFilhoDoFilho.parentNode.removeChild(segundoFilhoEUltimoFilhoDoFilho);
+
+let terceiroFilho = document.getElementById('terceiroFilho');
+terceiroFilho.parentNode.removeChild(terceiroFilho);
+
+let quartoFilho = document.getElementById('quartoEUltimoFilho');
+quartoFilho.parentNode.removeChild(quartoFilho);
+
+let ultimaDiv = whereYouAre.nextElementSibling;
+ultimaDiv.parentNode.removeChild(ultimaDiv);
+
+let primeiroFilho = whereYouAre.previousElementSibling;
+primeiroFilho.parentNode.removeChild(primeiroFilho);
