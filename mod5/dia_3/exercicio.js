@@ -64,20 +64,17 @@ let holidayButton = document.querySelector('button');
 
 holidayButton.addEventListener("click", clickColor);
 
-let active = 0;
-
 function clickColor() {
   let holidays = document.getElementsByClassName('holiday');
-  if(active === 0){
-    for(let index = 0; index < holidays.length; index += 1){
-      holidays[index].style.backgroundColor = 'rgb(0,0,255)';
+  let holidayColor = 'rgb(0, 0, 255)';
+  let defaultColor = 'rgb(238, 238, 238)';
+
+  for(let day of holidays){
+    if(day.style.backgroundColor !== holidayColor) {
+      day.style.backgroundColor = holidayColor;
+    } else {
+      day.style.backgroundColor = defaultColor;
     }
-    active = 1;
-  } else {
-    for(let index = 0; index < holidays.length; index += 1){
-      holidays[index].style.backgroundColor = 'rgb(238,238,238)';
-    }
-    active = 0;
   }
 };
 
@@ -85,4 +82,5 @@ function clickColor() {
 // Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
 // Adicione a este botão o ID "btn-friday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
 
