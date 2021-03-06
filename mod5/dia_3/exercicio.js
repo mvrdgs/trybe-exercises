@@ -59,7 +59,7 @@ createHolidayButton('Feriados');
 // Exercício 3:
 // Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
 // É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
-let holidayButton = document.querySelector('button');
+let holidayButton = document.getElementById('btn-holiday');
 
 holidayButton.addEventListener("click", clickColor);
 
@@ -82,12 +82,34 @@ function clickColor() {
 // Adicione a este botão o ID "btn-friday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 
-function fridayButton(){
-  let buttonsContainer = document.querySelector('.buttons-container');
+
+function fridayButtonCreate(){
   let fridayButton = document.createElement('button');
+  let buttonsContainer = document.querySelector('.buttons-container');
   fridayButton.id = 'btn-friday';
   fridayButton.innerText = 'Sexta-feira';
   buttonsContainer.appendChild(fridayButton);
 }
 
-fridayButton();
+fridayButtonCreate();
+
+// Exercício 5:
+// Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+let fridayButton = document.getElementById('btn-friday');
+
+fridayButton.addEventListener("click", clickFriday);
+
+function clickFriday() {
+  let fridays = document.getElementsByClassName('friday')
+  let sextouText = 'SEXTOU!!';
+  let defaultText = [4, 11, 18, 25];
+
+  for(let index = 0; index < fridays.length; index += 1) {
+    if (fridays[index].innerText !== sextouText) {
+      fridays[index].innerText = sextouText;
+    } else {
+      fridays[index].innerText = defaultText[index];
+    }
+  }
+}
