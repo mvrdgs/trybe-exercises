@@ -20,7 +20,6 @@ createDaysOfTheWeek();
 // Os dias 4, 11, 18 e 25 são Sexta-feira. Eles devem conter a classe day e a classe friday . Ex: <li class="day friday">4</li>
 // Copiar
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-const fridays = [4, 11, 18, 25];
 
 function calendarDays(array) {
   let daysList = document.getElementById('days');
@@ -83,4 +82,12 @@ function clickColor() {
 // Adicione a este botão o ID "btn-friday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 
+function fridayButton(){
+  let buttonsContainer = document.querySelector('.buttons-container');
+  let fridayButton = document.createElement('button');
+  fridayButton.id = 'btn-friday';
+  fridayButton.innerText = 'Sexta-feira';
+  buttonsContainer.appendChild(fridayButton);
+}
 
+fridayButton();
