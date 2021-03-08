@@ -34,6 +34,10 @@ function calendarDays(array) {
       dayNumber.className += ' holiday';
     }
 
+    if(parseInt(dayNumber.innerText) === 17) {
+      dayNumber.className += ' birthday';
+    }
+
     if(parseInt(dayNumber.innerText) === 4 || parseInt(dayNumber.innerText) === 11 || parseInt(dayNumber.innerText) === 18 || parseInt(dayNumber.innerText) === 25) {
       dayNumber.className += ' friday';
     }
@@ -92,6 +96,32 @@ function fridayButtonCreate(){
 }
 
 fridayButtonCreate();
+
+function josiButtonCreate(){
+  let josiButton = document.createElement('button');
+  let buttonsContainer = document.querySelector('.buttons-container');
+  josiButton.id = 'btn-birthday';
+  josiButton.innerText = 'Dia mais importante';
+  buttonsContainer.appendChild(josiButton);
+}
+
+josiButtonCreate();
+
+function showBirthday(){
+  let josiButton = document.querySelector('#btn-birthday');
+  let josiBirthday = document.querySelector('.birthday');
+  let josiText = 'Aniversário da Josi';
+  
+  josiButton.addEventListener('click', function(){
+    if (josiBirthday.innerText !== josiText) {
+      josiBirthday.innerText = josiText;
+    } else {
+      josiBirthday.innerText = '17';
+    }
+  });
+}
+
+showBirthday();
 
 // Exercício 5:
 // Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
@@ -175,8 +205,8 @@ insertColoredButton('green');
 let coloredButton = document.querySelector(".my-tasks div");
 
 function insertClass() {
-  if(coloredButton.className !== 'task-selected') {
-    coloredButton.className = 'task-selected';
+  if(coloredButton.className !== 'task selected') {
+    coloredButton.className = 'task selected';
   } else {
     coloredButton.className = 'task';
   }
@@ -184,6 +214,35 @@ function insertClass() {
 
 coloredButton.addEventListener('click', insertClass);
 
+// addButton.addEventListener('click', insertTask);
+
+// Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
+
+function setDayColor() {
+  let daysContainer = document.querySelector('#days');
+  let taskDiv = document.querySelector('.task');
+  let taskColor = taskDiv.style.backgroundColor;
+  let selectedTask = document.getElementsByClassName('task selected');
+
+  daysContainer.addEventListener('click', function(event) {
+    let eventTargetColor = event.target.style.color;
+    if(selectedTask.length > [0] && eventTargetColor !== taskColor) {
+      let color = selectedTask[0].style.backgroundColor;
+      event.target.style.color = color;
+    } else if (eventTargetColor === taskColor && selectedTask.length !== 0) {
+      event.target.style.color = '';
+    }
+  });
+}
+
+setDayColor();
+
+// Bônus:
+// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+// Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+// Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+// Dica - Propriedade: keyCode .
 
 // let taskInput = document.getElementById('task-input');
 // let myTasks = document.querySelector('.my-tasks');
@@ -196,4 +255,34 @@ coloredButton.addEventListener('click', insertClass);
 //   myTasks.appendChild(newTask);
 // }
 
-// addButton.addEventListener('click', insertTask);
+function addAppointment() {
+  let taskInput = document.getElementById('task-input');
+  let appointmentContainer = document.querySelector('.task-list');
+  let addButton = document.getElementById('btn-add');
+
+  addButton.addEventListener('click', function(){
+    let newAppointment = document.createElement('li');
+    newAppointment.innerText = taskInput.value;
+    if(newAppointment.innerText === '') {
+      alert("Nenhum texto digitado");
+      return;
+    }
+    appointmentContainer.appendChild(newAppointment);
+  });
+  
+  addButton.addEventListener('keyup', function(event){
+    var keyTest = event.key;
+    if(keyTest == '13'){
+      let newAppointment = document.createElement('li');
+      newAppointment.innerText = taskInput.value;
+      appointmentContainer.appendChild(newAppointment);
+      if(newAppointment.innerText === '') {
+        alert("Nenhum texto digitado");
+        return;
+      }
+      appointmentContainer.appendChild(newAppointment);
+    }
+  });
+}
+
+addAppointment();
