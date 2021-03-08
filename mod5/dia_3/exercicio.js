@@ -270,12 +270,10 @@ function addAppointment() {
     appointmentContainer.appendChild(newAppointment);
   });
   
-  addButton.addEventListener('keyup', function(event){
-    var keyTest = event.key;
-    if(keyTest == '13'){
+  taskInput.addEventListener('keyup', function(event){
+    if(event.key == 'Enter'){
       let newAppointment = document.createElement('li');
-      newAppointment.innerText = taskInput.value;
-      appointmentContainer.appendChild(newAppointment);
+      newAppointment.innerText = taskInput.value; 
       if(newAppointment.innerText === '') {
         alert("Nenhum texto digitado");
         return;
