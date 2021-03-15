@@ -8,12 +8,15 @@
 </head>
 <body>
   <form action="" method="GET">
-    <label for="get-email">Email: <input id="get-email" type="email" required placeholder="Digite seu email" autocomplete="off" autofocus></label>
-  <br>
-    <label for="get-password">Senha: <input id="get-pasword" type="password" required placeholder="Digite sua senha"></label>
-    <button type="submit">Entrar</button>
-  <br>
+    <label for="get-email">Email: <input id="get-email" name="email" type="email" placeholder="Digite seu email" autocomplete="off" autofocus></label>
+    <br>
+    <label for="get-password">Senha: <input id="get-pasword" name="password" type="password" placeholder="Digite sua senha"></label>
+    <br>
     <label for="reminder"><input id='reminder' type="checkbox"> Lembre-me</label>
+    <br>
+    <label for='start-date'>Data de início</label>
+      <input type="date" id="start-date" name="start-date">
+    <button type="submit">Entrar</button>
   </form>
 </body>
 </html>
