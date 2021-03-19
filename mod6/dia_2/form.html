@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js" async defer></script>
+</head>
+<body>
+  <form action="" method="get" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+      <label for="fullname">Digite seu nome: </label>
+      <input type="text" id="fullname" name="fullname" maxlength="40" required placeholder="Nome completo">
+      <br>
+      <label for="email">Digite seu email: </label>
+      <input type="email" name="email" id="email" maxlength="50" autocomplete="off" placeholder="email@email.com" required>
+      <br>
+      <label for="cpf">Digite seu CPF: </label>
+      <input type="text" name="cpf" id="cpf" required placeholder="Apenas números" maxlength="11">
+      <br>
+      <label for="address">Digite seu endereço: </label>
+      <input type="text" id="address" name="address" placeholder="Rua, numero" maxlength="200" required>
+      <br>
+      <label for="city">Digite a cidade: <input type="text" id="city" name="city" placeholder="Cidade onde mora" maxlength="28" required></label>
+      <br>
+      <label>Estado: </label> 
+        <select id='state-box'></select>
+      <br>
+      <input type="radio" name="property-type" id="house" required checked>
+      <label for="house">Casa</label>
+      <input type="radio" name="property-type" id="aprt" required>
+      <label for="aprt">Apartamento</label>
+    </fieldset>
+    <fieldset>
+      <legend>Experiência Profissional</legend>
+      <label>Resumo do currículo</label>
+      <br>
+      <textarea maxlength="1000" id="prf-xp" name="prf-xp" required cols="100" rows="10" placeholder="Resuma suas experiências profissionais"></textarea>
+      <br>
+      <label for="position">Cargo Ocupado: </label>
+      <input type="text" id="position" name="position" maxlength="40" placeholder="Função ocupada" required>
+      <br>
+      <label for="job-description">Descrição das atividades:</label>
+      <br>
+      <textarea type="text" id="job-description" name="job-description" maxlength="500" cols="100" rows="5" placeholder="Descreva brevemente suas atividades"required></textarea>
+      <br>
+      <label for='start-date'>Data de início</label>
+      <input type="text" id="start-date" name="start-date" placeholder="dd/mm/aaaa" required>
+    </fieldset>
+    <br>
+      <button id="submit-button" type="submit">Enviar</button>
+      <button id="clear-button">Limpar formulário</button>
+  </form>
+</body>
+</html>
