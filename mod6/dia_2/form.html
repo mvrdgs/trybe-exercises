@@ -6,37 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="DatePickerX-master/dist/css/DatePickerX.min.css">
   <link rel="stylesheet" href="node_modules/just-validate/dist/css/justValidateTooltip.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <title>Document</title>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <form action="" class="js-form form" method="get">
+  <form action="" class="js-form form container" method="get">
     <fieldset>
       <legend>Dados Pessoais</legend>
-      <div class="form-group">
-        <label for="fullname">Digite seu nome: </label>
-        <input type="text" id="fullname" name="fullname" autocomplete="new-text" maxlength="40" data-validate-field="name" placeholder="Nome completo">
-        <label for="email">Digite seu email: </label>
-        <input type="email" name="email" id="email" maxlength="50" data-validate-field="email" autocomplete="new-password" placeholder="email@email.com" required>
+      <div class="row g-9">
+        <div class="col-9">
+          <label for="fullname" class="form-label">Digite seu nome: </label>
+          <input type="text" id="fullname" name="fullname" autocomplete="new-text" maxlength="40" class="form-control" data-validate-field="fullname" placeholder="Nome completo">
+        </div>
+        <div class="col-5">
+          <label for="email" class="form-label">Digite seu email: </label>
+          <input type="email" class="form-control" name="email" id="email" maxlength="50" data-validate-field="email" autocomplete="new-password" placeholder="email@email.com" required>
+        </div>
+        <div class="col-4">
+          <label for="cpf" class="form-label">Digite seu CPF: </label>
+          <input type="text" class="form-control" name="cpf" id="cpf" required placeholder="Apenas números" maxlength="11">
+        </div>
+        <div class="col-5">
+          <label for="address">Digite seu endereço: </label>
+          <input type="text" id="address" class="form-control" name="address" placeholder="Rua, numero" maxlength="200" required>
+        </div>
+        <div class="col-4">
+          <label for="city" class="form-label">Digite a cidade:</label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="Cidade onde mora" maxlength="28" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Estado: </label> 
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id='state-box'>
+            <option selected>Selecione seu estado</option>
+          </select>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="property-type" id="house" required checked>
+          <label class="form-check-label" for="house" class="form-label">Casa</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="property-type" id="aprt" required>
+          <label class="form-check-label" for="aprt" class="form-label">Apartamento</label>
+        </div>
       </div>
-      <br>
-      <label for="cpf">Digite seu CPF: </label>
-      <input type="text" name="cpf" id="cpf" required placeholder="Apenas números" maxlength="11">
-      <br>
-      <label for="address">Digite seu endereço: </label>
-      <input type="text" id="address" name="address" placeholder="Rua, numero" maxlength="200" required>
-      <br>
-      <label for="city">Digite a cidade: <input type="text" id="city" name="city" placeholder="Cidade onde mora" maxlength="28" required></label>
-      <br>
-      <label>Estado: </label> 
-        <select id='state-box'></select>
-      <br>
-      <input type="radio" name="property-type" id="house" required checked>
-      <label for="house">Casa</label>
-      <input type="radio" name="property-type" id="aprt" required>
-      <label for="aprt">Apartamento</label>
-    </fieldset>
-    <fieldset>
+      </fieldset>
+      <fieldset>
       <legend>Experiência Profissional</legend>
       <label>Resumo do currículo</label>
       <br>
@@ -57,6 +72,7 @@
       <button id="clear-button">Limpar formulário</button>
   </form>
   <script src="jquery-3.6.0.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="DatePickerX-master/dist/js/DatePickerX.min.js"></script>
   <script src="node_modules/just-validate/dist/js/just-validate.min.js"></script>
 </body>
