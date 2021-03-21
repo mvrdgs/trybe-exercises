@@ -5,18 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="DatePickerX-master/dist/css/DatePickerX.min.css">
+  <link rel="stylesheet" href="node_modules/just-validate/dist/css/justValidateTooltip.min.css">
   <title>Document</title>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <form action="" method="get" enctype="multipart/form-data">
+  <form action="" class="js-form form" method="get">
     <fieldset>
       <legend>Dados Pessoais</legend>
-      <label for="fullname">Digite seu nome: </label>
-      <input type="text" id="fullname" name="fullname" maxlength="40" required placeholder="Nome completo">
-      <br>
-      <label for="email">Digite seu email: </label>
-      <input type="email" name="email" id="email" maxlength="50" autocomplete="off" placeholder="email@email.com" required>
+      <div class="form-group">
+        <label for="fullname">Digite seu nome: </label>
+        <input type="text" id="fullname" name="fullname" autocomplete="new-text" maxlength="40" data-validate-field="name" placeholder="Nome completo">
+        <label for="email">Digite seu email: </label>
+        <input type="email" name="email" id="email" maxlength="50" data-validate-field="email" autocomplete="new-password" placeholder="email@email.com" required>
+      </div>
       <br>
       <label for="cpf">Digite seu CPF: </label>
       <input type="text" name="cpf" id="cpf" required placeholder="Apenas números" maxlength="11">
@@ -56,5 +58,6 @@
   </form>
   <script src="jquery-3.6.0.min.js"></script>
   <script src="DatePickerX-master/dist/js/DatePickerX.min.js"></script>
+  <script src="node_modules/just-validate/dist/js/just-validate.min.js"></script>
 </body>
 </html>

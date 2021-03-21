@@ -90,10 +90,21 @@ window.addEventListener('DOMContentLoaded', function(){
     clearButton      : true,
     clearButtonLabel : 'Clear'
   });
-
 });
 
+new window.JustValidate('.js-form');
+
+// new window.JustValidate('.js-form', {
+//   rules: {
+//     fullName: {
+//       required: true
+//       minLength: 10;
+//       maxLength: 40;
+//     },
+//   }
+// });
+
 clearBtn.addEventListener('click', clear)
-submitBtn.addEventListener('click', submit);
+// submitBtn.addEventListener('click', submit);
 // startDate.addEventListener('focusout', verifyDate);
 setStates();
