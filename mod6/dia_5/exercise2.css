@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+header {
+  background-color: #666;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav {
+  display: flex;
+}
+
+header p {
+  align-self: center;
+  font-size: 2em;
+  color: aliceblue;
+}
+
+header ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+header li {
+  list-style: none;
+  background-color: lightslategrey;
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid black;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
