@@ -49,6 +49,31 @@ const verifyPair = (object, key, value) => {
   return false;
 }
 
+const verifyFrequency = (object, subject) => {
+  const keys = Object.keys(object);
+  let frequency = 0;
+  for (let index = 0; index < keys.length; index += 1) {
+    const values = Object.values(object[keys[index]]);
+    if (values.includes(subject)) {
+      frequency += values[1];
+    }
+  }
+  return frequency;
+}
+
+const createReport = (object, teacher) => {
+  const values = Object.values(object);
+  let students = 0;
+  let aula = [];
+  for (let index in values) {
+    if (values[index].professor === teacher) {
+      aula.push(values[index].materia);
+      students += values[index].numeroEstudantes;
+    }
+  }
+  return Object.assign({}, { professor: teacher, aulas: aula,  estudantes: students});
+}
+
 addValue(lesson2, 'turno', 'manhã');
 listKeys(lesson2);
 objectLength(lesson2);
@@ -57,3 +82,5 @@ console.log(allLessons);
 console.log(numberOfStudents(allLessons));
 console.log(getValueByIndex(lesson2, 0));
 console.log(verifyPair(lesson2, 'materia', 'Carlos'));
+console.log(verifyFrequency(allLessons, 'Matemática'));
+console.log(createReport(allLessons, 'Maria Clara'));
