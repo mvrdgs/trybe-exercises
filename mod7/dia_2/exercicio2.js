@@ -42,12 +42,7 @@ const getValueByIndex = (object, index) => {
   return object[keys[index]];
 }
 
-const verifyPair = (object, key, value) => {
-  if (Object.keys(object).includes(key) && Object.values(object).includes(value)) {
-    return true;
-  }
-  return false;
-}
+const verifyPair = (object, key, value) => (Object.keys(object).includes(key) && Object.values(object).includes(value));
 
 const verifyFrequency = (object, subject) => {
   const keys = Object.keys(object);
@@ -74,13 +69,13 @@ const createReport = (object, teacher) => {
   return Object.assign({}, { professor: teacher, aulas: aula,  estudantes: students});
 }
 
-addValue(lesson2, 'turno', 'manhã');
-listKeys(lesson2);
-objectLength(lesson2);
-listValues(lesson2);
-console.log(allLessons);
-console.log(numberOfStudents(allLessons));
-console.log(getValueByIndex(lesson2, 0));
+// addValue(lesson2, 'turno', 'manhã');
+// listKeys(lesson2);
+// objectLength(lesson2);
+// listValues(lesson2);
+// console.log(allLessons);
+// console.log(numberOfStudents(allLessons));
+// console.log(getValueByIndex(lesson2, 0));
 console.log(verifyPair(lesson2, 'materia', 'Carlos'));
-console.log(verifyFrequency(allLessons, 'Matemática'));
-console.log(createReport(allLessons, 'Maria Clara'));
+// console.log(verifyFrequency(allLessons, 'Matemática'));
+// console.log(createReport(allLessons, 'Maria Clara'));
