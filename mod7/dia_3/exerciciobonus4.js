@@ -1,11 +1,11 @@
 const assert = require('assert');
 
 const getLargestNumber = (array) => {
-  let largestNumber;
-  for (let index = 0; index < array.length - 1; index += 1) {
-      if (array[index] < array[index + 1]) {
-          largestNumber = array[index + 1];
-      }
+  let largestNumber = array[0];
+  for (let index = 0; index < array.length; index += 1) {
+    if (largestNumber < array[index]) {
+      largestNumber = array[index];
+    }
   }
   return largestNumber;
 }
