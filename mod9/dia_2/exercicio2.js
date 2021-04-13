@@ -1,21 +1,31 @@
-const fetchPromise = () => {
-  const promise = new Promise((resolve, reject) => {
+function sumNumbers() {
+  const tenRandomNumbers = Array.from(
+    { length: 10 },
+    () => Math.ceil(Math.random() * 50),
+  )
 
-    const tenRandomNumbers = Array.from(
-      { length: 10 },
-      () => Math.ceil(Math.random() * 50),
-    )
+  const total = tenRandomNumbers.map((number) => number * number)
+    .reduce((result, current) => result += current);
+  
+  if (total >= 8000) {
+    throw new Error();
+  }
 
-    const total = tenRandomNumbers.map((number) => number * number)
-      .reduce((result, current) => result += current);
+  return total;
+}
 
-    total > 8000 ? reject('É mais de 8 mil! Essa promise deve estar quebrada') : resolve(total);
-  });
+function divideAndSumNumbers(result) {
+  return [2, 3, 5, 10].map((number) => result / number)
+    .reduce((result, current) => result += current);
+}
 
-  promise
-    .then((result) => [2, 3, 5, 10].map((number) => result / number))
-    .then((result) => console.log(result.reduce((result, current) => result += current)))
-    .catch((error) => console.log(error));
+const fetchPromise = async () => {
+  try {
+    const total = await sumNumbers();
+    const result = await divideAndSumNumbers(total);
+  } catch(error) {
+    console.log('É mais de oito mil! Essa promise deve estar quebrada!')
+  }
 }
 
 fetchPromise();
