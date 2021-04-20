@@ -4,7 +4,7 @@
   "description": "",
   "main": "conteudo.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch --coverage"
   },
   "keywords": [],
   "author": "",
