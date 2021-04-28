@@ -5,7 +5,7 @@ import Pokemons from './Data';
 function App() {
   return (
     <section className='container'>
-      { Pokemons.map((pokemon) => <Pokemon pokemon={ pokemon } /> )}
+      { Pokemons.map((pokemon, index) => <Pokemon key={ index } pokemon={ pokemon } /> )}
     </section>
   );
 }
