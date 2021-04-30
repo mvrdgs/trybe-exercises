@@ -1,0 +1,15 @@
+button {
+  display: block;
+}
+
+.greenCounter {
+  color: green;
+}
+
+.blueCounter {
+  color: blue;
+}
+
+.redCounter {
+  color: red;
+}
