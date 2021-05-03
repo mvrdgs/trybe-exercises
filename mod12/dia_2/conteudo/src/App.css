@@ -1,0 +1,9 @@
+.error-message {
+  color: red;
+  padding: 2px;
+  margin-left: 3px;
+}
+
+.input-box {
+  margin-top: 5px;
+}
