@@ -1,6 +1,8 @@
 const { expect } = require('chai');
+const sinon = require('sinon');
+const fs = require('fs');
 
-const { testaNumero } = require('./index');
+const { testaNumero, escreveTextoNoArquivo } = require('./index');
 
 describe('Testa se o número recebido', () => {
   it('É do tipo \'number\'', () => {
@@ -25,5 +27,15 @@ describe('Testa se o número recebido', () => {
     const resultado = testaNumero(0);
 
     expect(resultado).to.be.equals('neutro');
+  });
+});
+
+describe('Verifica se a função escreve o conteúdo em um arquivo específico', () => {
+  before(() => sinon.stub(fs, 'writeFileSync'))
+
+  it('Em caso de sucesso, retorna \'OK\'', () => {
+    const resultado = escreveTextoNoArquivo('teste.txt', 'lalala');
+    
+    expect(resultado).to.be.equals('OK');
   });
 });
