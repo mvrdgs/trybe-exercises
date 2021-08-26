@@ -31,7 +31,8 @@ describe('Testa se o número recebido', () => {
 });
 
 describe('Verifica se a função escreve o conteúdo em um arquivo específico', () => {
-  before(() => sinon.stub(fs, 'writeFileSync'))
+  before(() => sinon.stub(fs, 'writeFileSync'));
+  after(() => fs.writeFileSync.restore());
 
   it('Em caso de sucesso, retorna \'OK\'', () => {
     const resultado = escreveTextoNoArquivo('teste.txt', 'lalala');
