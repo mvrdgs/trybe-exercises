@@ -4,4 +4,6 @@ const testaNumero = (numero) => {
   if (numero < 0) return 'negativo';
 };
 
-module.exports = testaNumero;
+module.exports = {
+  testaNumero,
+};

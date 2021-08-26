@@ -1,8 +1,14 @@
 const { expect } = require('chai');
 
-const testaNumero = require('./index');
+const { testaNumero } = require('./index');
 
 describe('Testa se o número recebido', () => {
+  it('É do tipo \'number\'', () => {
+    const resultado = testaNumero('5');
+
+    expect(resultado).to.be.equals('Insira um valor numérico')
+  });
+
   it('É maior que 0', () => {
     const resultado = testaNumero(10);
 
