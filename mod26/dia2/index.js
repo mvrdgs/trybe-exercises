@@ -20,7 +20,7 @@ const functionWithThreeParams = (param1, param2, param3) => new Promise((res, re
 const generateRandomNumber = () => Math.floor(Math.random() * 100 + 1);
 
 functionWithThreeParams(generateRandomNumber(), generateRandomNumber(), generateRandomNumber())
-  .then((result) => console.log(result))
+  .then((result) => console.log('Promise: %s', result))
   .catch((err) => console.log(err.message));
 
   // Escreva um código para consumir a função construída no exercício anterior.
@@ -29,3 +29,16 @@ functionWithThreeParams(generateRandomNumber(), generateRandomNumber(), generate
   // Utilize then e catch para manipular a Promise retornada pela função:
   // Caso a Promise seja rejeitada, escreva na tela o motivo da rejeição.
   // Caso a Promise seja resolvida, escreva na tela o resultado do cálculo.
+
+const testNumbers = async () => {
+  try {
+    console.log('Async/Await: %s', await functionWithThreeParams(generateRandomNumber(), generateRandomNumber(), generateRandomNumber()))
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+testNumbers()
+
+// Reescreva o código do exercício anterior para que utilize async/await .
+// Lembre-se: a palavra chave await só pode ser utilizada dentro de funções async .
