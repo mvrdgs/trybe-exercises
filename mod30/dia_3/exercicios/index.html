@@ -64,7 +64,25 @@
     socket.on('likeCount', ({ likeCount }) => {
       console.log(likeCount);
       setLikeCount(likeCount)
-    })
+    });
+
+    const starsBtn = document.querySelector('#starIcon');
+    const currentStars = document.querySelector('#currentStars');
+    let localStarsCount = Number(currentStars.innerText);
+
+    const incrementStars = (starsCount) => {
+      currentStars.innerText = starsCount;
+    };
+
+    socket.on('updateStars', ({ starsCount }) => {
+      console.log(starsCount);
+      incrementStars(starsCount);
+    });
+
+    starsBtn.addEventListener('click', () => {
+      incrementStars(localStarsCount += 1);
+      socket.emit('updateStars', localStarsCount);
+    });
   </script>
 </body>
 </html>

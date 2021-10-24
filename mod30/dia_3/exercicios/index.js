@@ -19,9 +19,11 @@ io.on('connection', (socket) => {
   socket.on('likePost', () => {
     likeCount += 1;
 
-    console.log(likeCount);
-
     io.emit('likeCount', { likeCount })
+  });
+
+  socket.on('updateStars', (starsCount) => {
+    socket.broadcast.emit('updateStars', { starsCount })
   });
 });
 
