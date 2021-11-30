@@ -20,3 +20,11 @@ def asterisks_square(n):
 
 
 asterisks_square(10)
+
+
+def biggest_word(list):
+    list.sort(key=len)
+    print(list[-1])
+
+
+biggest_word(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"])
