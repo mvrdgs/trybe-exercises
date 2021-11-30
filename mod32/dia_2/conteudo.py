@@ -1,12 +1,14 @@
-def vertical_print(word):
+def vertical_print():
+    word = input("Digite uma palavra: ")
     for letter in word:
         print(letter)
 
 
-vertical_print("palavra")
+vertical_print()
 
 
-def sum_numbers(numbers):
+def sum_numbers():
+    numbers = input('Digite os números a serem somados separados por " ": ')
     total = 0
     for number in numbers.split(" "):
         if str.isdigit(number):
@@ -16,4 +18,4 @@ def sum_numbers(numbers):
     print(f'Sum of valid values: {total}')
 
 
-sum_numbers("1 2 3 4 5 6 7 8 b")
+sum_numbers()
