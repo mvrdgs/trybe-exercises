@@ -9,6 +9,19 @@ class Conjunto:
             if item > self.last_element:
                 self.last_element = item
 
+    def __str__(self):
+        string = "{"
+
+        for index, present in enumerate(self.set):
+            if present:
+                string += str(index)
+                if index < self.last_element:
+                    string += ", "
+                else:
+                    string += "}"
+
+        return string
+
 
 A = [0, 10, 100, 1000]
 
@@ -17,3 +30,5 @@ if __name__ == "__main__":
 
     for item in A:
         conjunto.add(item)
+
+    print(conjunto)
