@@ -34,17 +34,25 @@ class Conjunto:
 
         return novoConjunto
 
+    def intersection(self, conjuntoB):
+        novoConjunto = Conjunto()
 
-arrayA = [0, 10, 100, 1000]
+        for item in range(1001):
+            if self.set[item] and conjuntoB.set[item]:
+                novoConjunto.add(item)
+
+        return novoConjunto
+
 
 if __name__ == "__main__":
+    arrayA = [0, 10, 100, 1000]
     conjunto = Conjunto()
 
     for item in arrayA:
         conjunto.add(item)
 
     conjuntoB = Conjunto()
-    for item in [2, 3, 4]:
+    for item in [10, 2, 3, 4]:
         conjuntoB.add(item)
 
-    print(conjunto.union(conjuntoB))
+    print(conjunto.intersection(conjuntoB))
