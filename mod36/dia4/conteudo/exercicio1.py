@@ -22,6 +22,9 @@ class Conjunto:
 
         return string
 
+    def __contains__(self, item):
+        return self.set[item]
+
 
 A = [0, 10, 100, 1000]
 
@@ -31,4 +34,4 @@ if __name__ == "__main__":
     for item in A:
         conjunto.add(item)
 
-    print(conjunto)
+    print(0 in conjunto)
