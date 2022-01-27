@@ -25,13 +25,26 @@ class Conjunto:
     def __contains__(self, item):
         return self.set[item]
 
+    def union(self, conjuntoB):
+        novoConjunto = Conjunto()
 
-A = [0, 10, 100, 1000]
+        for item in range(1001):
+            if self.set[item] or conjuntoB.set[item]:
+                novoConjunto.add(item)
+
+        return novoConjunto
+
+
+arrayA = [0, 10, 100, 1000]
 
 if __name__ == "__main__":
     conjunto = Conjunto()
 
-    for item in A:
+    for item in arrayA:
         conjunto.add(item)
 
-    print(0 in conjunto)
+    conjuntoB = Conjunto()
+    for item in [2, 3, 4]:
+        conjuntoB.add(item)
+
+    print(conjunto.union(conjuntoB))
