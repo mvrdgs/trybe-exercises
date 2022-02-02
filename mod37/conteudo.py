@@ -15,7 +15,7 @@ def check_expression(expression):
         except IndexError:
             return False
 
-    return True
+    return len(stack) == 0
 
 
-print(check_expression("(){}"))
+print(check_expression("()(((("))
